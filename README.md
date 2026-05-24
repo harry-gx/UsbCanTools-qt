@@ -1,0 +1,1 @@
+# UsbCanTools-qt
