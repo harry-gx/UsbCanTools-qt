@@ -1,0 +1,98 @@
+{
+    "firmware": {
+        "name": "APP.hex",
+        "path": "D:/E-develop/dev_app/mcu_bootloader/APP/Debug/APP.hex"
+    },
+    "formatVersion": 2,
+    "params": {
+        "defaultTimeoutMs": 5000,
+        "extendedFrame": false,
+        "flashStartAddressHex": "00014000",
+        "maxPayloadPerBlock": 512,
+        "rxIdHex": "666",
+        "testerPresentDuringFlash": true,
+        "txIdHex": "511"
+    },
+    "steps": [
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "50",
+            "name": "编程会话",
+            "request": "10 02",
+            "retries": 0,
+            "timeoutMs": 3000,
+            "type": "RAW"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "71",
+            "name": "启动擦除Flash",
+            "request": "自动附加下载地址和固件长度",
+            "retries": 0,
+            "timeoutMs": 5000,
+            "type": "AUTO_ERASE"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "74",
+            "name": "请求下载",
+            "request": "",
+            "retries": 1,
+            "timeoutMs": 5000,
+            "type": "AUTO_34"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "76",
+            "name": "传输数据",
+            "request": "固件: APP.HEX",
+            "retries": 0,
+            "timeoutMs": 5000,
+            "type": "AUTO_36"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "77",
+            "name": "传输退出",
+            "request": "",
+            "retries": 1,
+            "timeoutMs": 15000,
+            "type": "AUTO_37"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "71",
+            "name": "启动CRC校验",
+            "request": "自动附加固件长度和CRC32",
+            "retries": 0,
+            "timeoutMs": 5000,
+            "type": "AUTO_CRC"
+        },
+        {
+            "checkSid": true,
+            "enabled": true,
+            "expectedSid": "51",
+            "name": "HardReset",
+            "request": "11 01",
+            "retries": 0,
+            "timeoutMs": 3000,
+            "type": "RAW"
+        },
+        {
+            "checkSid": false,
+            "enabled": true,
+            "expectedSid": "",
+            "name": "HardReset后延时",
+            "request": "延时1S",
+            "retries": 0,
+            "timeoutMs": 1000,
+            "type": "DELAY"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/device_management.svg</file>
+        <file>icons/can_panel.svg</file>
+        <file>icons/uds_diag.svg</file>
+        <file>icons/ecu_flash.svg</file>
+        <file>icons/dropdown_red.svg</file>
+        <file>icons/elecan_app_256.ico</file>
+        <file>icons/elecan_brand_2.svg</file>
+        <file>icons/elecan_window_topleft_64_2.png</file>
+        <file>icons/elecan_taskbar_32_2.png</file>
+        <file>icons/elecan_tile_256_2.png</file>
+    </qresource>
+</RCC>
